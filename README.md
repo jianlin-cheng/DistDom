@@ -9,7 +9,7 @@ Deep learning prediction of protein domains from distance maps
 # Prediction
 make sure the environment is activated. Go to the directory, use the following command to run predictions:
 python -W ignore make_predictions.py --device "cpu or gpu" --distance_map /path/to/distancemaps --seq /path/to/1D_sequence --label /path/to/labels
-1. Set device to cpu or gpu according to your need
+1. Set device to 'cpu' or 'cuda' according to your need
 2. Set --distance_map to the path of your stored distance maps
 3. Set --seq to the path of your stored 1d features
 4. Set --label to the path of your stored ground truths
