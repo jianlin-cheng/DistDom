@@ -6,6 +6,8 @@ Deep learning prediction of protein domains from distance maps
 3. Create conda environment using the following script: conda create --name DistDom
 4. Activate conda environment: conda activate DistDom
 5. Now install the following python packages: PyTorch, Scikit-learn, glob, numpy
+# Model Location
+The saved model can be found from https://zenodo.org/record/6462058#.YlichnVKhhE. Create a folder in the github repository named 'Saved_Models', then save the downloaded model there.
 # Prediction
 make sure the environment is activated. Go to the directory, use the following command to run predictions:
 python -W ignore make_predictions.py --device "cpu or gpu" --distance_map /path/to/distancemaps --seq /path/to/1D_sequence --label /path/to/labels
