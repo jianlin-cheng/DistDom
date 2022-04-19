@@ -24,7 +24,7 @@ DEVICE = torch.device(args.__dict__['device'])
 path = args.__dict__['distance_map']
 path_feat = args.__dict__['seq']
 path_ground_truth = args.__dict__['label']
-model_path = 'Saved_Models/DistDom.pth'
+model_path = 'Saved_Model/DistDom.pth'
 nThreads = 4
 dataset = my_dataset()
 dataset.initialize(path,path_feat,path_ground_truth)
@@ -89,9 +89,9 @@ with torch.no_grad():
         running_validation_F1 = calculate_F1(label, torch.argmax(output_final, dim=1))
         running_validation_mattcoeff = calculate_mattcoeff(label, torch.argmax(output_final, dim=1))
 
-        x, y, z = calculate_precision_recall_by_threshold(label,output_final,threshold=0.2)
-        print('Name: {0} Precision: {1} Recall: {2} F1: {3} for 0.2 threshold'.format(str(name[0].split('.txt')[0]),x,y,z))
-        pred_np, pred_np_prob = save_prediction(label,output_final,threshold=0.2)
+        x, y, z = calculate_precision_recall_by_threshold(label,output_final,threshold=0.03)
+        print('Name: {0} Precision: {1} Recall: {2} F1: {3} for 0.03 threshold'.format(str(name[0].split('.txt')[0]),x,y,z))
+        pred_np, pred_np_prob = save_prediction(label,output_final,threshold=0.03)
         np.savetxt(os.path.join('Saved_Predictions',str(name[0].split('.txt')[0])+'.txt'),pred_np)
 
 
