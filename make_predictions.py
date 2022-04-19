@@ -24,7 +24,7 @@ DEVICE = torch.device(args.__dict__['device'])
 path = args.__dict__['distance_map']
 path_feat = args.__dict__['seq']
 path_ground_truth = args.__dict__['label']
-model_path = 'Saved_Model/DistDom.pth'
+model_path = 'Saved_Models/DistDom.pth'
 nThreads = 4
 dataset = my_dataset()
 dataset.initialize(path,path_feat,path_ground_truth)
